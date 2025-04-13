@@ -1,5 +1,5 @@
 import streamlit as st
-from run_graph import graph
+from run_graph import graph            # 빌드한 컴파일러 정보 : run_graph
 
 # Streamlit 웹 앱 페이지 설정
 st.set_page_config(page_title="아, 뭐 먹지? 뭐 하지?", page_icon="🍽", layout="wide")
@@ -27,7 +27,7 @@ if submitted:
     with st.spinner("추천을 생성 중입니다..."):
         try:
             # LangGraph 실행: 상태를 기반으로 에이전트 흐름 수행
-            events = list(graph.stream(state))
+            events = list(graph.stream(state))   # user_input과 location을 포함한 상태를 LangGraph에 전달
 
             # 디버깅 로그 출력
             st.write("✅ LangGraph 실행 완료")
